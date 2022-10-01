@@ -1,0 +1,10 @@
+
+
+s -> (S) | (OP_CODE S S) | LITERAL
+
+Keine Direktwerte erlaubt. (Ersetzbar durch Literale und Interpretation)
+1+2 wird zu: a+b (Interpretation a:1, b:2)
+
+(OP_CODE ARG1 ARG2)
+
+ARG1 := (OP_CODE)
