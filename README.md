@@ -10,7 +10,7 @@
 
 ## Numeric Expression
 ```java
-Parser<Double> parser = new Parser<>(0.0);
+Parser<Double> parser = new Parser<>(0.0); // default value (0.0) is used when an identifier is not found in a given interpretation
 Interpretation<Double> interpretation = new StandartDoubleInterpretation();
 interpretation.addLiterals(List.of("x", "y", "z"), List.of(1, 2, 3));
 Double result = parser.evaluate("(+ (pow 2 x) (- y z))", interpretation);
@@ -27,7 +27,7 @@ Double result = parser.evaluate("(+ (pow 2 x) (- y z))", interpretation);
 
 ## Boolean Expression
 ```java
-Parser<Boolean> parser = new Parser<>(0.0);
+Parser<Boolean> parser = new Parser<>(false);
 Interpretation<Boolean> interpretation = new StandartBooleanInterpretation(List.of("a", "b", "c"), List.of(true, false, true));
 Boolean result = parser.evaluate("(-> (&& a b) c)", interpretation); // = true
 ```
