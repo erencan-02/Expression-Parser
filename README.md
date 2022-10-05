@@ -8,6 +8,7 @@
 
 ## Example
 
+## Numeric Expression
 ```java
 Parser<Double> parser = new Parser<>(0.0);
 Interpretation<Double> interpretation = new StandartDoubleInterpretation();
@@ -22,3 +23,13 @@ Parser<Double> parser = new Parser<>(0.0);
 Interpretation<Double> interpretation = new StandartDoubleInterpretation(List.of("x", "y", "z"), List.of(1, 2, 3));
 Double result = parser.evaluate("(+ (pow 2 x) (- y z))", interpretation);
 ```
+
+
+## Boolean Expression
+```java
+Parser<Boolean> parser = new Parser<>(0.0);
+Interpretation<Boolean> interpretation = new StandartBooleanInterpretation(List.of("a", "b", "c"), List.of(true, false, true));
+Boolean result = parser.evaluate("(-> (&& a b) c)", interpretation); // = true
+```
+
+
